@@ -1,5 +1,4 @@
 import './App.css';
-import './Functions';
 
 function App() {
   return (
@@ -8,27 +7,18 @@ function App() {
 
       <div className="inner">
 
-        <div className="scores">
+        <div className="clicking">
 
-           <p>Computer : <span id="Computer_scores0">0</span></p>
-           <p>User : <span id="Computer_scores1">0</span></p>
-           <p>Draw : <span id="Computer_scores2">0</span></p>
-
-        </div>
-
-
-        <div className="images">
-
-          <p onClick={stoner} class="stone">STONE</p>
-          {/* <p onClick={Paper}>PAPER</p>
-          <p onClick={scissor}>SCISSOR</p> */}
+          <p onClick={stoner}>STONE</p>
+          <p onClick={paper}>PAPER</p>
+          <p onClick={scissor}>SCISSOR</p>
            
         </div>
 
-        <div>
-          <p id="content" className="content1"></p>
-          <p id="content2" className="content1"></p>
+        <div className="Winners">
 
+          <p id="content" ></p>
+          <p id="content1"></p>
 
         </div>
 
@@ -42,32 +32,95 @@ function App() {
 
 function stoner()
 {
-    let Draw,count,user = 0;
+    // let Draw,count,user = 0;
 
     let random=Math.ceil(Math.random()*3);
     if(random===1)
     {
-      document.getElementById("content").innerHTML="Draw of the Match";
-      Draw++;
-      document.getElementById("content2").innerHTML="COMPUTER HAS CHOOSEN STONE ";
-      document.getElementById("Computer_scores2").innerHTML=Draw;
+      document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN STONE ";
+      document.getElementById("content1").innerHTML="DRAW OF THE MATCH";
+      // Draw++;
+      // document.getElementById("Computer_scores2").innerHTML=Draw;
     }
     else if(random===2)
     {
-      document.getElementById("content").innerHTML="Computer own the match";
-      count++;
-      document.getElementById("content2").innerHTML="COMPUTER HAS CHOOSEN PAPER ";
-      document.getElementById("Computer_scores1").innerHTML=count;
+
+      document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN PAPER ";
+      document.getElementById("content1").innerHTML="COMPUTER WON THE MATCH";
+      // count++;
+      // document.getElementById("Computer_scores1").innerHTML=count;
     }
     else if(random===3)
     {
-      document.getElementById("content").innerHTML="User own the match";
-      user++;
-      document.getElementById("content2").innerHTML="COMPUTER HAS CHOOSEN SCISSOR ";
-      document.getElementById("Computer_scores0").innerHTML=user;
+
+      document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN SCISSOR ";
+      document.getElementById("content1").innerHTML="YOU WON THE MATCH";
+      // user++;
+      // document.getElementById("Computer_scores0").innerHTML=user;
     }
 
-    
+}
+
+// eslint-disable-next-line no-unused-vars
+function paper()
+{
+
+  let random=Math.ceil(Math.random()*3);
+  if(random===1)
+  {
+    document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN STONE ";
+    document.getElementById("content1").innerHTML="YOU WON THE MATCH";
+      // Draw++;
+      // document.getElementById("Computer_scores2").innerHTML=Draw;
+  }
+  else if(random===2)
+  {
+
+    document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN PAPER ";
+    document.getElementById("content1").innerHTML="DRAW OF THE MATCH";
+      // count++;
+      // document.getElementById("Computer_scores1").innerHTML=count;
+  }
+  else if(random===3)
+  {
+
+    document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN SCISSOR ";
+    document.getElementById("content1").innerHTML="COMPUTER WON THE MATCH";
+      // user++;
+      // document.getElementById("Computer_scores0").innerHTML=user;
+  }
+        
+}
+
+
+function scissor()
+{
+
+  let random=Math.ceil(Math.random()*3);
+  if(random===1)
+  {
+    document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN STONE ";
+    document.getElementById("content1").innerHTML="COMPUTER WON THE MATCH";
+      // Draw++;
+      // document.getElementById("Computer_scores2").innerHTML=Draw;
+  }
+  else if(random===2)
+  {
+
+    document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN PAPER ";
+    document.getElementById("content1").innerHTML="YOU WON THE MATCH";
+      // count++;
+      // document.getElementById("Computer_scores1").innerHTML=count;
+  }
+  else if(random===3)
+  {
+
+    document.getElementById("content").innerHTML="COMPUTER HAS CHOOSEN SCISSOR ";
+    document.getElementById("content1").innerHTML="DRAW OF THE MATCH";
+      // user++;
+      // document.getElementById("Computer_scores0").innerHTML=user;
+  }
+
 }
 
 
